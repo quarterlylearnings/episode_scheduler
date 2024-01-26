@@ -8,6 +8,6 @@ defmodule EpisodeSchedulerWeb.Router do
   scope "/api", EpisodeSchedulerWeb do
     pipe_through :api
 
-    post "/calendly", CalendlyController, :create
+    post( "/calendly", CalendlyController, :create)
   end
 end
