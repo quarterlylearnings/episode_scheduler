@@ -3,6 +3,7 @@ defmodule EpisodeSchedulerWeb.CalendlyController do
 
     def create(conn, params) do
         data = params
-        send_resp(conn, 200, %{ "message" => "Connected", data: data })
+        json(conn, %{message: "Webhook processed"})
     end
+
 end
