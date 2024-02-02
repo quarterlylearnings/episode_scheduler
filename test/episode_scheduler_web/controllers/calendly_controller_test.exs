@@ -4,7 +4,7 @@ defmodule EpisodeSchedulerWeb.Controllers.CalendlyControllerTest do
   import Phoenix.ConnTest
   import EpisodeSchedulerWeb.Constants
 
-  @sample_payload get_sample_payload()
+  @sample_payload get_test_calendly_event()
 
 
   test "POST /calendly responds with 200 given a valid payload", %{conn: conn} do
