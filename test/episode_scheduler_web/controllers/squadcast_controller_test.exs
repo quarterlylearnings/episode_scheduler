@@ -3,10 +3,13 @@ defmodule EpisodeSchedulerWeb.SquadcastControllerTest do
 
   alias EpisodeSchedulerWeb.SquadcastController
 
-  @sample_payload EpisodeSchedulerWeb.Constants.get_sample_payload
+  @test_request EpisodeSchedulerWeb.Constants.get_test_squadcast_request
 
   describe "POST /api/squadcast" do
-    test "schedules a SquadCast recording given a valid Calendly event payload" do
+    test "schedules a SquadCast recording given a valid payload" do
+      valid_payload = @test_request
+
+
     end
 
   end

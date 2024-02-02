@@ -64,6 +64,24 @@ defmodule EpisodeSchedulerWeb.Constants do
     }
   }
 
+
+  @test_squadcast_request %{
+    "sessionTitle" => "Your Session Title",
+    "date" => "2023-03-19",
+    "timeZone" => "America/Los_Angeles",
+    "startTime" => "05:00 PM",
+    "endTime" => "07:00 PM",
+    "stage" => "john@email.com",
+    "viewer" => "jane@email.com",
+    "videoEnabled" => "true",
+    "favorite" => "true",
+    "showID" => "Show ID"
+  }
+
+  def get_test_squadcast_request do
+    @test_squadcast_request
+  end
+
   def get_sample_payload do
     @sample_payload
   end
