@@ -1,5 +1,5 @@
 defmodule EpisodeSchedulerWeb.Constants do
-  @sample_payload %{
+  @test_calendly_event %{
     "created_at" => "2020-11-23T17:51:19.000000Z",
     "created_by" => "https://api.calendly.com/users/AAAAAAAAAAAAAAAA",
     "event" => "invitee.created",
@@ -64,7 +64,6 @@ defmodule EpisodeSchedulerWeb.Constants do
     }
   }
 
-
   @test_squadcast_request %{
     "sessionTitle" => "Your Session Title",
     "date" => "2023-03-19",
@@ -78,11 +77,48 @@ defmodule EpisodeSchedulerWeb.Constants do
     "showID" => "Show ID"
   }
 
+  @test_squadcast_response %{
+    "sessionID" => "Session ID",
+    "sessionTitle" => "Session Title",
+    "showID" => "Show ID",
+    "showTitle" => "Show Name",
+    "showImg" => "Show Image URL",
+    "orgID" => "Org ID",
+    "date" => "Date Time",
+    "startTime" => "5:00 PM",
+    "endTime" => "7:00 PM",
+    "videoEnabled" => "true",
+    "favorite" => "true",
+    "take" => 0,
+    "inviteLinks" => %{
+      "stage" => [
+        [
+          %{
+            "shortLink" => "https://squadcastdev.page.link/eb6Y",
+            "previewLink" => "https://squadcastdev.page.link/eb6Y?d=1"
+          }
+        ]
+      ],
+      "backstage" => [
+        [
+          %{
+            "shortLink" => "https://squadcastdev.page.link/6o2V",
+            "previewLink" => "https://squadcastdev.page.link/6o2V?d=1"
+          }
+        ]
+      ]
+    }
+  }
+  def get_test_calendly_event do
+    @test_calendly_event
+  end
+
   def get_test_squadcast_request do
     @test_squadcast_request
   end
 
-  def get_sample_payload do
-    @sample_payload
+  def get_test_squadcast_response do
+    @test_squadcast_response
   end
+
 end
