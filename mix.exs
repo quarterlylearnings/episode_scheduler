@@ -40,7 +40,8 @@ defmodule EpisodeScheduler.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
       {:poison, "~> 4.0"},
-      {:mox, "~> 1.0", only: :test}
+      {:mox, "~> 1.0", only: :test},
+      {:httpoison, "~> 1.8"}
     ]
   end
 
