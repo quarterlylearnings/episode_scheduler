@@ -3,12 +3,13 @@ defmodule EpisodeSchedulerWeb.Controllers.CalendlyControllerTest do
 
   import Phoenix.ConnTest
   import EpisodeSchedulerWeb.Constants
+  import EpisodeSchedulerWeb.CalendlyController
 
   @sample_payload get_test_calendly_event()
 
 
   test "POST /calendly responds with 200 given a valid payload", %{conn: conn} do
-    conn = post(conn, "/api/calendly", @sample_payload)
+    conn = create(conn, @sample_payload)
     assert conn.status == 200
     refute json_response(conn, 200) == nil
   end
