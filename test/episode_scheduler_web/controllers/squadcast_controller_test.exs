@@ -1,25 +1,20 @@
 defmodule EpisodeSchedulerWeb.SquadcastControllerTest do
   use EpisodeSchedulerWeb.ConnCase
-
-  alias EpisodeSchedulerWeb.MockHTTPClient
+  import Mox
+  setup :verify_on_exit!
   alias EpisodeSchedulerWeb.SquadcastController
 
   @test_request EpisodeSchedulerWeb.Constants.get_test_squadcast_request
   @test_response EpisodeSchedulerWeb.Constants.get_test_squadcast_response
 
   describe "SquadCast controller" do
-    setup do
-      # Mock a POST request to the SquadCast API
-      Mox.expect(MockHTTPClient, :post, fn _url, _headers, _body ->
-        {:ok, %{status_code: 200, body: @test_response}}
-      end)
-      :ok
-    end
     test "schedules a SquadCast recording given a valid session payload" do
+      # use the HTTP mock to stub the HTTP adapter
+      HTTPMock |> expect(:schedule_session, fn _url, _body -> {:ok, @test_request} end)
       # call the controller action
-      conn = post(build_conn(), "/api/squadcast", @test_request)
-      # assert the response
-      assert json_response(conn, 200) == @test_response
+      result = SquadcastController.create_session(@test_request)
+      # assert the response contains the expected data
+      assert result == @test_response
 
     end
 
