@@ -9,5 +9,6 @@ defmodule EpisodeSchedulerWeb.Router do
     pipe_through :api
 
     post( "/calendly", CalendlyController, :create)
+    post( "/squadcast", SquadcastController, :create)
   end
 end
