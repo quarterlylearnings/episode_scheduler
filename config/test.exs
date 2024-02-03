@@ -13,4 +13,4 @@ config :logger, level: :warning
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
 # Use the mock HTTP client for testing
-config :episode_scheduler, :http_client, EpisodeSchedulerWeb.MockHTTPClient
+config :episode_scheduler, :http_client, HTTPClientBehaviourMock
