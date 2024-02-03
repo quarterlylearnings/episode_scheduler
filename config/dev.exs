@@ -53,4 +53,7 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 # Use HTTPClient in development
-config :episode_scheduler, :http_client, EpisodeSchedulerWeb.MockHTTPClient
+config :episode_scheduler, :http_client, EpisodeSchedulerWeb.HTTPClient
+
+# Use HTTP adapter in development
+config :episode_scheduler, :http_adapter, EpisodeScheduler.HttpAdapter
