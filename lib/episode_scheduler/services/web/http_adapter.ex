@@ -5,11 +5,12 @@ defmodule EpisodeScheduler.HttpAdapter do
   def base_url(), do: Application.get_env(:episode_scheduler, :squadcast_base_url)
 
   def process_url(url) do
-    base_url() <> url
+    "#{base_url()}#{url}"
   end
 
   def post(url, body) do
-    post(url, Jason.encode!(body), headers())
+    post(process_url(url), Jason.encode!(body), headers())
+    |> process_response_body
   end
 
   defp headers do
