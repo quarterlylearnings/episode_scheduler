@@ -8,7 +8,9 @@
 import Config
 
 config :episode_scheduler,
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  squadcast_base_url: System.get_env("SQUADCAST_BASE_URL"),
+  squadcast_api_key: System.get_env("SQUADCAST_API_KEY")
 
 # Configures the endpoint
 config :episode_scheduler, EpisodeSchedulerWeb.Endpoint,
