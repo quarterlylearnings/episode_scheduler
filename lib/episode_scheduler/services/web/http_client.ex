@@ -15,8 +15,9 @@ defmodule EpisodeScheduler.HTTPClient do
 
   defp handle_response(response) do
     case response do
-      {:ok, %{body: response}} -> {:ok, response.body}
+      {:ok, response} -> {response}
       {:ok, %{body: response, status_code: 404}} -> {:error, response}
+      {:ok, nil} -> {:ok, nil}
       {:error, error} -> {:error, error}
     end
   end
