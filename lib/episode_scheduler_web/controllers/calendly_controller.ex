@@ -8,6 +8,8 @@ defmodule EpisodeSchedulerWeb.CalendlyController do
             |> put_status(400)
             |> json(%{message: "No payload"})
         end
+        # call method to transform the payload into a SquadCast session request
+
         json(conn, %{message: "Webhook processed"})
     end
 end
