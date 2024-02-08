@@ -4,7 +4,7 @@ defmodule EpisodeSchedulerWeb.SquadcastController do
   use EpisodeSchedulerWeb, :controller
   def create_session(session) do
     with {:ok, session} <- http_client().schedule_session(session) do
-      {:ok, session}
+      {session}
     else
       {:error, error} -> {:error, error}
     end

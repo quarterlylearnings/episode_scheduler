@@ -14,7 +14,7 @@ defmodule EpisodeScheduler.Services.Web.HTTPClientTest do
     # call the controller action
     result = HTTPClient.schedule_session(@test_squadcast_request)
     # assert the response contains the expected data
-    assert result == @test_squadcast_response
+    assert result == {@test_squadcast_response}
   end
 
 
