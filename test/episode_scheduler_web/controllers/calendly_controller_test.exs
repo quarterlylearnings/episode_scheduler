@@ -6,7 +6,7 @@ defmodule EpisodeSchedulerWeb.Controllers.CalendlyControllerTest do
   import EpisodeSchedulerWeb.CalendlyController
 
   @test_calendly_event get_test_calendly_event()
-  @test_squadcast_response get_test_squadcast_response()
+  @test_squadcast_request get_test_squadcast_request()
 
   test "POST /calendly responds with 200 given a valid payload", %{conn: conn} do
     conn = create(conn, @test_calendly_event)
@@ -16,11 +16,11 @@ defmodule EpisodeSchedulerWeb.Controllers.CalendlyControllerTest do
 
   test "accepts an incoming webhook event from Calendly and prepares a SquadCast session payload" do
     input = @test_calendly_event
-    output = @test_squadcast_response
+    expected_output = @test_squadcast_request
     # call method for creating squadcast request body from event payload
     result = create_squadcast_request_body(input)
     # assert the response contains the expected data
-    assert result == output
+    assert result == expected_output
 
   end
 
