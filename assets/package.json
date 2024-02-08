@@ -1,5 +1,0 @@
-{
-    "scripts": {
-      "deploy": "cd .. && MIX_ENV=prod mix assets.deploy && rm -f _build/esbuild"
-    }
-  }
