@@ -57,3 +57,6 @@ config :episode_scheduler, :http_client, EpisodeSchedulerWeb.HTTPClient
 
 # Use HTTP adapter in development
 config :episode_scheduler, :http_adapter, EpisodeScheduler.HttpAdapter
+
+# Access squadcast base url in development
+config :episode_scheduler, squadcast_base_url: System.get_env("SQUADCAST_BASE_URL")

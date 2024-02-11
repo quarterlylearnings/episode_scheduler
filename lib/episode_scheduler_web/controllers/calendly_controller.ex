@@ -11,10 +11,8 @@ defmodule EpisodeSchedulerWeb.CalendlyController do
       |> put_status(400)
       |> json(%{message: "No payload"})
     end
-
     # if the event type is active then create a session in SquadCast
-    if match?(%{"status" => "active"}, params["scheduled_event"]) do
-      # if params["scheduled_event"]["status"] == "active" do
+    if params["payload"]["scheduled_event"]["status"] == "active" do
       # call the method to create a SquadCast session request body
       squadcast_request = create_squadcast_request_body(params)
       # send the request body to SquadCastController module
