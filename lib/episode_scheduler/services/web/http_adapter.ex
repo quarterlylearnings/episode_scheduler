@@ -9,6 +9,7 @@ defmodule EpisodeScheduler.HttpAdapter do
   end
 
   def post(url, body) do
+    IO.inspect(process_url(url))
     post(process_url(url), Jason.encode!(body), headers())
     |> process_response_body
   end
@@ -22,6 +23,7 @@ defmodule EpisodeScheduler.HttpAdapter do
   end
 
   def process_response_body(""), do: {""}
+  def process_response_body({:error, _}), do: {:error}
   def process_response_body(body) do
     body
     |> Jason.decode!
